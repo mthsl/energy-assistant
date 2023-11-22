@@ -69,6 +69,6 @@ ________________________________________________________________
 
 $ python energy.py
 
-Nota:
+### Nota:
 Certifique-se de que possui o Python instalado em seu ambiente antes de executar o script.
 Espero que este script facilite a gestão de energia e a tomada de decisões estratégicas ao plantar sementes no jogo. Bom farm! 🍀
