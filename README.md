@@ -1,5 +1,41 @@
 # Energy Assist
 
+🇺🇸
+
+***This is a simple Python script designed to enhance the planting experience in the game. The code provides an interactive menu that allows users to choose the seed they want to plant and calculates the total energy cost required to plant, water, and harvest the desired quantity of seeds.***
+
+### Features
+
+- Interactive Menu: Users can choose from various seeds available in the game, each with its name and specific energy cost.
+- Energy Cost Calculation: Based on the chosen seed and desired quantity, the script calculates the total energy required to plant, water, and harvest the seeds.
+- Available Energy Check: The script checks if the user's current energy quantity is sufficient for the desired operations. Otherwise, the user is informed that they do not have enough energy to plant the selected seeds.
+
+### Available Seeds
+
+- Popberry
+- Butterberry
+- Clover
+- Grainbow
+- Watermint
+- Scarrot
+
+### How to Use
+
+1. Run the script in a Python environment; (You can use an online environment for faster access, for example: https://www.online-python.com/)
+2. Choose the seed you want to plant from the interactive menu;
+3. Enter the current available energy quantity;
+4. Enter the quantity of seeds you want to plant;
+5. The script will calculate and inform if there is enough energy to perform the desired operations.
+
+### Example Usage
+$ python energy.py
+
+### Note:
+Ensure you have Python installed in your environment before running the script.
+We hope this script makes energy management and strategic decision-making easier when planting seeds in the game. Happy farming! 🍀
+
+________________________________________________________________
+
 🇧🇷
 
 **Sistema de Cálculo de Gasto de Energia para o Pixels**
@@ -36,39 +72,3 @@ $ python energy.py
 Nota:
 Certifique-se de que possui o Python instalado em seu ambiente antes de executar o script.
 Espero que este script facilite a gestão de energia e a tomada de decisões estratégicas ao plantar sementes no jogo. Bom farm! 🍀
-
-________________________________________________________________
-
-🇺🇸
-
-***This is a simple Python script designed to enhance the planting experience in the game. The code provides an interactive menu that allows users to choose the seed they want to plant and calculates the total energy cost required to plant, water, and harvest the desired quantity of seeds.***
-
-### Features
-
-- Interactive Menu: Users can choose from various seeds available in the game, each with its name and specific energy cost.
-- Energy Cost Calculation: Based on the chosen seed and desired quantity, the script calculates the total energy required to plant, water, and harvest the seeds.
-- Available Energy Check: The script checks if the user's current energy quantity is sufficient for the desired operations. Otherwise, the user is informed that they do not have enough energy to plant the selected seeds.
-
-### Available Seeds
-
-- Popberry
-- Butterberry
-- Clover
-- Grainbow
-- Watermint
-- Scarrot
-
-### How to Use
-
-1. Run the script in a Python environment; (You can use an online environment for faster access, for example: https://www.online-python.com/)
-2. Choose the seed you want to plant from the interactive menu;
-3. Enter the current available energy quantity;
-4. Enter the quantity of seeds you want to plant;
-5. The script will calculate and inform if there is enough energy to perform the desired operations.
-
-### Example Usage
-$ python energy.py
-
-### Note:
-Ensure you have Python installed in your environment before running the script.
-We hope this script makes energy management and strategic decision-making easier when planting seeds in the game. Happy farming! 🍀
