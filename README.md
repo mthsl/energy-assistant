@@ -1,4 +1,4 @@
-# Energy Assist
+# Energy Assistant
 
 🇺🇸
 
