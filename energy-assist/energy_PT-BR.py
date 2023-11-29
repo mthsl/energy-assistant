@@ -8,12 +8,12 @@ print('_|                                              ')
 print('_|')
 
 seeds = {
-    1: {'nome': 'Popberry', 'energia_gasta': 3.5},
-    2: {'nome': 'Butterberry', 'energia_gasta': 3.5},
-    3: {'nome': 'Clover', 'energia_gasta': 5},
-    4: {'nome': 'Grainbow', 'energia_gasta': 4},
-    5: {'nome': 'Watermint', 'energia_gasta': 8},
-    6: {'nome': 'Scarrot', 'energia_gasta': 8}
+    1: {'nome': 'Popberry', 'energia_gasta': 2},
+    2: {'nome': 'Butterberry', 'energia_gasta': 2},
+    3: {'nome': 'Clover', 'energia_gasta': 3.5},
+    4: {'nome': 'Grainbow', 'energia_gasta': 2.5},
+    5: {'nome': 'Watermint', 'energia_gasta': 6.5},
+    6: {'nome': 'Scarrot', 'energia_gasta': 6.5}
 }
 
 print(' ')
