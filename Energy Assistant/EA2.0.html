@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/energy_calculator.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="/src/assets/download__1_-removebg-preview.png" type="image/x-icon" />
+    <title>Energy Calculator</title>
+</head>
+
+<body class="bg-dark">
+    <header class="cabecalho text-center">
+        <pre style="color: #5ce01a; margin-bottom: 50px" class="fw-bold">
+        <p></p>                                                                           
+_____                                 _            _     _              _   
+| ____|_ __   ___ _ __ __ _ _   _     / \   ___ ___(_)___| |_ __ _ _ __ | |_ 
+|  _| | '_ \ / _ \ '__/ _` | | | |   / _ \ / __/ __| / __| __/ _` | '_ \| __|
+| |___| | | |  __/ | | (_| | |_| |  / ___ \\__ \__ \ \__ \ || (_| | | | | |_ 
+|_____|_| |_|\___|_|  \__, |\__, | /_/   \_\___/___/_|___/\__\__,_|_| |_|\__|
+                        |___/ |___/                                            
+        </pre>
+    </header>
+
+    <main class="text-center">
+        <div>
+            <!-- 1st Tab -->
+            <div class="container-form container-fluid p-0 shadow-lg w-50" id="form1">
+                <form class="form d-sm-flex flex-column gap-3 bg-white p-4 rounded-2 align-items-center"
+                    style="display: block">
+                    <p id="response1" style="font-size: 1.5rem"></p>
+
+                    <div class="input-group w-75 bg-transparent">
+                        <label class="input-group-text w-25 text-center bg-warning" for="inputGroupSelect01">Seed</label>
+                        <select class="form-select" id="inputGroupSelect01" required>
+                            <option value="" selected>Choose your seed</option>
+                            <option value="1">Popberry</option>
+                            <option value="2">Butterberry</option>
+                            <option value="3">Clover</option>
+                            <option value="4">Grainbow</option>
+                            <option value="5">Watermint</option>
+                            <option value="6">Scarrow</option>
+                            <option value="7">Grumpkin</option>
+                            <option value="8">Astracactus</option>
+                            <option value="9">Hotato</option>
+                            <option value="10">Muckchuck</option>
+                        </select>
+                    </div>
+
+                    <div class="gap-lg-5 gap-sm-3 w-75 d-flex gap-5">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation" value="plant"
+                                id="flexCheckDefault1" checked />
+                            <label class="form-check-label" for="flexCheckDefault1">Plant</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation" value="water"
+                                id="flexCheckDefault2" />
+                            <label class="form-check-label" for="flexCheckDefault2">Water</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation" value="harvest"
+                                id="flexCheckDefault3" />
+                            <label class="form-check-label" for="flexCheckDefault3">Harvest</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation" value="plantWater"
+                                id="flexCheckDefault4" />
+                            <label class="form-check-label" for="flexCheckDefault4">Plant and Water</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation" value="plantWaterHarvest"
+                                id="flexCheckDefault5" />
+                            <label class="form-check-label" for="flexCheckDefault5">Plant, Water, and Harvest</label>
+                        </div>
+                    </div>
+
+                    <p class="fw-bold mt-4" style="color: black;">Enter the quantity of energy you have:</p>
+                    <div class="input-group flex-nowrap w-75">
+                        <span style="width: 27%" class="input-group-text bg-warning" id="addon-wrapping ">Current
+                            energy</span>
+                        <input type="number" min="0" class="form-control w-100" placeholder="Energy" id="energyform1"
+                            required />
+                    </div>
+
+                    <button class="btn bg-success rounded-2 px-5 text-dark mt-2" type="button"
+                        onclick="calculateEnergy()">Calculate</button>
+
+                    <!-- Tab 1 -> Tab 2 -->
+                    <button class="btn bg-info rounded-2 px-5 text-dark mt-2" type="button"
+                        onclick="switchTab(2)">Switch to Seed -> Energy</button>
+                </form>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="container-form container-fluid p-0 shadow-lg w-50" id="form2" style="display: none">
+                <form class="form d-sm-flex flex-column gap-3 bg-white p-4 rounded-2 align-items-center">
+                    <p id="response2" style="font-size: 1.5rem"></p>
+
+                    <div class="input-group w-75 bg-transparent">
+                        <label class="input-group-text w-25 text-center bg-warning" for="inputGroupSelect02">Seed</label>
+                        <select class="form-select" id="inputGroupSelect02" required>
+                            <option value="" selected>Choose your seed</option>
+                            <option value="1">Popberry</option>
+                            <option value="2">Butterberry</option>
+                            <option value="3">Clover</option>
+                            <option value="4">Grainbow</option>
+                            <option value="5">Watermint</option>
+                            <option value="6">Scarrow</option>
+                            <option value="7">Grumpkin</option>
+                            <option value="8">Astracactus</option>
+                            <option value="9">Hotato</option>
+                            <option value="10">Muckchuck</option>
+                        </select>
+                    </div>
+
+                    <div class="gap-lg-5 gap-sm-3 w-75 d-flex gap-5">
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation2" value="plant"
+                                id="flexCheckDefault1" checked />
+                            <label class="form-check-label" for="flexCheckDefault1">Plant</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation2" value="water"
+                                id="flexCheckDefault2" />
+                            <label class="form-check-label" for="flexCheckDefault2">Water</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation2" value="harvest"
+                                id="flexCheckDefault3" />
+                            <label class="form-check-label" for="flexCheckDefault3">Harvest</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation2" value="plantWater"
+                                id="flexCheckDefault4" />
+                            <label class="form-check-label" for="flexCheckDefault4">Plant and Water</label>
+                        </div>
+
+                        <div class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="operation2" value="plantWaterHarvest"
+                                id="flexCheckDefault5" />
+                            <label class="form-check-label" for="flexCheckDefault5">Plant, Water, and Harvest</label>
+                        </div>
+                    </div>
+
+                    <p class="fw-bold mt-4" style="color: black;">Enter the number of seeds you want to use:</p>
+                    <div class="input-group flex-nowrap w-75">
+                        <span style="width: 27%" class="input-group-text bg-warning" id="addon-wrapping">Number of
+                            seeds</span>
+                        <input type="number" min="0" class="form-control w-100" placeholder="Number of seeds"
+                            id="seedNumber" required />
+                    </div>
+
+                    <button class="btn bg-success rounded-2 px-5 text-dark mt-2" type="button"
+                        onclick="calculateSeedEnergy()">Calculate</button>
+
+                    <!-- Tab 2 -> Tab 1 -->
+                    <button class="btn bg-info rounded-2 px-5 text-dark mt-2" type="button"
+                        onclick="switchTab(1)">Switch to Energy -> Seed</button>
+                </form>
+            </div>
+
+            <div class="container-form container-fluid p-4 shadow w-25 mt-5 text-center text-black bg-white rounded-2 d-flex flex-column">
+                <h4 class="pt">Contribute to the project:</h4>
+                <div class="w-100">
+                    <p class="fs-6 text-wrap flex-wrap" style="overflow-wrap: break-word">ronin:e72d25715b5a7db9c8f2434594c299264c974005</p>
+                    <img src="https://altcoinsbox.com/wp-content/uploads/2023/04/ronin-logo.jpg" width="50" height="50">
+                </div>
+            </div>
+        </main>
+
+        <script src="./src/js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+
+        <script>
+            function calculateSeedEnergy() {
+                const choice = document.getElementById("inputGroupSelect02").value;
+                const seedNumber = document.getElementById("seedNumber").value;
+                const selectedOption = document.querySelector('input[name="operation2"]:checked').value;
+
+                const seeds = {
+                    1: { 'name': 'Popberry', 'energy_cost': 2 },
+                    2: { 'name': 'Butterberry', 'energy_cost': 2 },
+                    3: { 'name': 'Clover', 'energy_cost': 3.5 },
+                    4: { 'name': 'Grainbow', 'energy_cost': 2.5 },
+                    5: { 'name': 'Watermint', 'energy_cost': 6.5 },
+                    6: { 'name': 'Scarrow', 'energy_cost': 6.5 },
+                    7: { 'name': 'Grumpkin', 'energy_cost': 5.5 },
+                    8: { 'name': 'Astracactus', 'energy_cost': 10 },
+                    9: { 'name': 'Hotato', 'energy_cost': 9 },
+                    10: { 'name': 'Muckchuck', 'energy_cost': 8.5 }
+                };
+
+                const wateringCost = 0.5;
+                const harvestingCost = 1;
+
+                if (choice in seeds) {
+                    const seed = seeds[choice];
+                    let totalEnergyRequired;
+
+                    switch (selectedOption) {
+                        case 'plant':
+                            totalEnergyRequired = seedNumber * seed['energy_cost'];
+                            break;
+                        case 'water':
+                            totalEnergyRequired = seedNumber * wateringCost;
+                            break;
+                        case 'harvest':
+                            totalEnergyRequired = seedNumber * harvestingCost;
+                            break;
+                        case 'plantWater':
+                            totalEnergyRequired = seedNumber * (seed['energy_cost'] + wateringCost);
+                            break;
+                        case 'plantWaterHarvest':
+                            totalEnergyRequired = seedNumber * (seed['energy_cost'] + wateringCost + harvestingCost);
+                            break;
+                        default:
+                            totalEnergyRequired = 0;
+                    }
+
+                    document.getElementById("response2").innerHTML = `To perform the selected operation with ${seedNumber} ${seed['name']}(s), you need ${totalEnergyRequired} energy.`;
+                } else {
+                    document.getElementById("response2").innerHTML = 'Option not found!';
+                }
+            }
+
+            function calculateEnergy() {
+                const currentEnergy = document.getElementById("energyform1").value;
+                const choice = document.getElementById("inputGroupSelect01").value;
+                const selectedOption = document.querySelector('input[name="operation"]:checked').value;
+
+                const seeds = {
+                    1: { 'name': 'Popberry', 'energy_cost': 2 },
+                    2: { 'name': 'Butterberry', 'energy_cost': 2 },
+                    3: { 'name': 'Clover', 'energy_cost': 3.5 },
+                    4: { 'name': 'Grainbow', 'energy_cost': 2.5 },
+                    5: { 'name': 'Watermint', 'energy_cost': 6.5 },
+                    6: { 'name': 'Scarrow', 'energy_cost': 6.5 },
+                    7: { 'name': 'Grumpkin', 'energy_cost': 5.5 },
+                    8: { 'name': 'Astracactus', 'energy_cost': 10 },
+                    9: { 'name': 'Hotato', 'energy_cost': 9 },
+                    10: { 'name': 'Muckchuck', 'energy_cost': 8.5 }
+                };
+
+                const wateringCost = 0.5;
+                const harvestingCost = 1;
+
+                if (choice in seeds) {
+                    const seed = seeds[choice];
+                    let seedsPossible;
+
+                    switch (selectedOption) {
+                        case 'plant':
+                            seedsPossible = currentEnergy / (seed['energy_cost']);
+                            break;
+                        case 'water':
+                            seedsPossible = currentEnergy / (wateringCost);
+                            break;
+                        case 'harvest':
+                            seedsPossible = currentEnergy / (harvestingCost);
+                            break;
+                        case 'plantWater':
+                            seedsPossible = currentEnergy / (seed['energy_cost'] + wateringCost);
+                            break;
+                        case 'plantWaterHarvest':
+                            seedsPossible = currentEnergy / (seed['energy_cost'] + wateringCost + harvestingCost);
+                            break;
+                        default:
+                            seedsPossible = 0;
+                    }
+
+                    document.getElementById("response1").innerHTML = `With this energy, you can perform the selected operation with ${seedsPossible} seeds.`;
+                } else {
+                    document.getElementById("response1").innerHTML = 'Option not found!';
+                }
+            }
+
+            function switchTab(tab) {
+                document.getElementById("form1").style.display = tab === 1 ? "block" : "none";
+                document.getElementById("form2").style.display = tab === 2 ? "block" : "none";
+            }
+        </script>
+    </body>
+
+    </html>
